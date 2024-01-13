@@ -8,31 +8,14 @@ The provided Solidity code (`swapTokens.sol`) implements a smart contract named 
 
 ### Contract Structure:
 
-1. **Constructor Parameters:**
-    - `_token1Addr`: The contract address of the first token (token1).
-    - `_token2Addr`: The contract address of the second token (token2).
-    - `_priceToken2`: The predefined price of token2 in terms of token1.
-
-2. **State Variables:**
-    - `token1Addr`: Stores the contract address of token1.
-    - `token2Addr`: Stores the contract address of token2.
-    - `priceToken2`: Stores the predefined price of token2 in terms of token1.
-
-3. **Events:**
-    - `swapToken1ToToken2`: Emitted when a user swaps token1 for token2.
-    - `swapToken2ToToken1`: Emitted when a user swaps token2 for token1.
-
-### Swap Functions:
-
-1. **`swapToken1ToToken2` Function:**
-    - Allows users to swap token1 for token2 at the predefined price.
-    - Checks user balances and contract balance before proceeding with the swap.
-    - Emits `swapToken1ToToken2` event upon successful swap.
-
-2. **`swapToken2ToToken1` Function:**
-    - Allows users to swap token2 for token1 at the predefined price.
-    - Checks user balances and contract balance before proceeding with the swap.
-    - Emits `swapToken2ToToken1` event upon successful swap.
+### Token Swapping Mechanism:
+The contract employs the ERC20 standard to interact with Token1 and Token2, ensuring compatibility with various ERC20 tokens.
+Users initiate swaps by calling the swapToken1ToToken2 or swapToken2ToToken1 functions, specifying the amount to be swapped.
+The conversion rate (priceToken2) is predefined and dictates the exchange ratio between Token1 and Token2.
+Safety Measures:
+The contract checks user balances and contract balances before executing swaps, preventing swaps with insufficient balances.
+ERC20 approval mechanisms are used to ensure secure token transfers and protect against potential misuse.
+Events (swapToken1ToToken2 and swapToken2ToToken1) are emitted to log successful swap transactions, facilitating transparency.
 
 ## 3. Security Considerations:
 
