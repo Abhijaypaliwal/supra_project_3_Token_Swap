@@ -32,3 +32,22 @@ The provided Solidity code (`swapTokens.sol`) implements a smart contract named 
 
 5. **Visibility Modifiers:**
     - The contract uses appropriate visibility modifiers to control access to functions. For example, the `swapToken1ToToken2` and `swapToken2ToToken1` functions are external, ensuring they can only be called from outside the contract.
+
+# Test Script
+
+The testing of contract is made via "Foundry" framework
+The test smart contract is located in the ./test folder 
+
+To launch the test script, if foundry is not installed in the system, install foundry by typing the command-
+`curl -L https://foundry.paradigm.xyz | bash`
+
+then, install openzeppelin dependencies by typing command-
+`forge install OpenZeppelin/openzeppelin-contracts`
+
+if there is problem "Openzeppelin-contracts" not found, type- 
+`forge remappings > remappings.txt`
+which creates a remappings.txt file inside the root directory of the project
+
+Now to launch the script, simply type-
+`forge test -vvv`
+The above script would show the outputs and pass conditions of the test, if you want to see the transaction traces, simply add an extra "v" in the script at last.
