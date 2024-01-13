@@ -7,14 +7,14 @@ The provided Solidity code (`swapTokens.sol`) implements a smart contract named 
 ## 2. Design Choices:
 
 ### 2.1 Token Swapping Mechanism:
-The contract employs the ERC20 standard to interact with Token1 and Token2, ensuring compatibility with various ERC20 tokens.  
-Users initiate swaps by calling the swapToken1ToToken2 or swapToken2ToToken1 functions, specifying the amount to be swapped.  
-The conversion rate (priceToken2) is predefined and dictates the exchange ratio between Token1 and Token2.
+1. The contract employs the ERC20 standard to interact with Token1 and Token2, ensuring compatibility with various ERC20 tokens.  
+2. Users initiate swaps by calling the swapToken1ToToken2 or swapToken2ToToken1 functions, specifying the amount to be swapped.  
+3. The conversion rate (priceToken2) is predefined and dictates the exchange ratio between Token1 and Token2.
 
 ### 2.2 Safety Measures:
-The contract checks user balances and contract balances before executing swaps, preventing swaps with insufficient balances.   
-ERC20 approval mechanisms are used to ensure secure token transfers and protect against potential misuse.   
-Events (swapToken1ToToken2 and swapToken2ToToken1) are emitted to log successful swap transactions, facilitating transparency.   
+1. The contract checks user balances and contract balances before executing swaps, preventing swaps with insufficient balances.   
+2. ERC20 approval mechanisms are used to ensure secure token transfers and protect against potential misuse.   
+3. Events (swapToken1ToToken2 and swapToken2ToToken1) are emitted to log successful swap transactions, facilitating transparency.   
 
 ## 3. Security Considerations:
 
