@@ -26,8 +26,8 @@ contract swapTokens {
      */
     uint256 public priceToken2;
 
-    event swapToken1ToToken2(address indexed _to, uint256 _token1Amount, uint256 _token2ReleasedAmount);
-    event swapToken2ToToken1(address indexed _to, uint256 _token2Amount, uint256 _token1ReleasedAmount);
+    event swapToken1ToToken2Event(address indexed _to, uint256 _token1Amount, uint256 _token2ReleasedAmount);
+    event swapToken2ToToken1Event(address indexed _to, uint256 _token2Amount, uint256 _token1ReleasedAmount);
 
     /**
      * @dev Contract constructor
@@ -54,7 +54,7 @@ contract swapTokens {
         token1.transferFrom(msg.sender, address(this), _amount);
         token2.approve(msg.sender, _token2transfer);
         token2.transfer(msg.sender, _token2transfer);
-        emit swapToken1ToToken2(msg.sender, _amount, _token2transfer);
+        emit swapToken1ToToken2Event(msg.sender, _amount, _token2transfer);
     }
     /**
      * @notice swap token2 to token1 at predefined price
@@ -70,6 +70,6 @@ contract swapTokens {
         token2.transferFrom(msg.sender, address(this), _amount);
         token1.approve(msg.sender, _token1transfer);
         token1.transfer(msg.sender, _token1transfer);
-        emit swapToken2ToToken1(msg.sender, _amount, _token2transfer);
+        emit swapToken2ToToken1Event(msg.sender, _amount, _token1transfer);
     }
 }
